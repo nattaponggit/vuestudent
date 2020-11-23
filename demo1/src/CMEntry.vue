@@ -1,5 +1,8 @@
 <template>
-  <h1>1234</h1>
+  <div>
+  <label>Username</label>
+    <input v-model="username"  type="text" >
+  </div>
 </template>
 
 <script>
