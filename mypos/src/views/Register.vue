@@ -2,9 +2,10 @@
   <div>
     <h1>Register</h1>
     <form>
-      <input type="text" name="username" placeholder="Username" id="" />
-      <input type="text" name="password" placeholder="Password" id="" />
+      <input type="text" v-model="account.username" placeholder="Username" />
+      <input type="text" v-model="account.password" placeholder="Password" />
       <button type="submit">Submit</button>
+      <span>#Debug {{ account }}</span>
     </form>
   </div>
 </template>
@@ -12,6 +13,11 @@
 <script>
 export default {
   name: "register",
+  data() {
+    return {
+      
+    }
+  },
 };
 </script>
 
