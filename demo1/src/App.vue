@@ -8,9 +8,9 @@
     <button @click="login">Login</button>
     <hr>
     
-    <input type="text" placeholder="Username"> <br>
-    <input type="text" placeholder="Password"> <br>
-    <button>Submit</button>
+    <input v-model="username"  type="text" placeholder="Username"> <br>
+    <input v-model="password" type="text" placeholder="Password"> <br>
+    <button @click="submit">Submit</button>
   </div>
 </template>
 
