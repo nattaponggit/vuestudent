@@ -15,7 +15,10 @@ export default {
   name: "register",
   data() {
     return {
-      
+      account: {
+        username: "",
+        password: ""
+      }
     }
   },
 };
