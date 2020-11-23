@@ -8,5 +8,6 @@ vscode extensions
 yarn
 vue/cli
 anydesk
+octotree (chrome extension)
 
 
