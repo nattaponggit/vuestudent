@@ -10,7 +10,16 @@
       </v-img>
 
       <v-card-text>
-        <v-form> </v-form>
+        <v-form>
+          <v-text-field name="username" label="username" id="username" />
+
+          <v-text-field name="password" label="password" id="password" />
+
+          <v-layout row>
+            <v-btn flat color="primary">Cancel</v-btn>
+            <v-btn color="success">Login</v-btn>
+          </v-layout>
+        </v-form>
       </v-card-text>
     </v-card>
   </v-container>
