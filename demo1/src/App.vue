@@ -22,6 +22,8 @@ export default {
       myname: "lek",
       age: 42,
       address: "3761/135 ...",
+      username: "",
+      password: ""
     };
   },
   methods: {
