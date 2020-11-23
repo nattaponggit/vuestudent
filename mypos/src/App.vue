@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <v-app>
     <Header />
     <Menu />
     <Content />
-  </div>
+  </v-app>
 </template>
 
 <script>

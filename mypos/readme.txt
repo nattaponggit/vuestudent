@@ -1,4 +1,4 @@
-// npm install --save material-design-icons-iconfont 
+// yarn add material-design-icons-iconfont 
 // import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 # fronend
