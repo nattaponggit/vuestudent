@@ -11,6 +11,7 @@
     <input v-model="username"  type="text" placeholder="Username"> <br>
     <input v-model="password" type="text" placeholder="Password"> <br>
     <button @click="submit">Submit</button>
+    <button @click="clear">Clear</button>
   </div>
 </template>
 
@@ -27,8 +28,12 @@ export default {
     };
   },
   methods: {
+    clear(){
+      this.username = ""
+      this.password = ""
+    },
     submit(){
-      alert(this.username)
+      alert(`username: ${this.username}, password: ${this.password}`)
     },
     register(){
       alert("Register")
