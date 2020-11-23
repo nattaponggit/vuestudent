@@ -5,6 +5,12 @@
     <div>I have {{ age }} years old</div>
     <div>My address is {{ address }}</div>
     <button @click="register">Register</button>
+    <button @click="login">Login</button>
+    <hr>
+    
+    <input type="text" placeholder="Username"> <br>
+    <input type="text" placeholder="Password"> <br>
+    <button>Submit</button>
   </div>
 </template>
 
@@ -20,7 +26,10 @@ export default {
   },
   methods: {
     register(){
-      alert("Hey")
+      alert("Register")
+    },
+    login: function(){
+      alert("Login")
     }
   },
 };
