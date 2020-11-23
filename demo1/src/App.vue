@@ -27,6 +27,9 @@ export default {
     };
   },
   methods: {
+    submit(){
+      alert(this.username)
+    },
     register(){
       alert("Register")
     },
