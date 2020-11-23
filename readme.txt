@@ -11,3 +11,11 @@ anydesk
 octotree (chrome extension)
 
 
+- vscode extensions
+    + vscode-icon
+    + prettier code formatter
+    + color highlight
+    + path intellisense
+    + vetur
+    + rest client 
+
