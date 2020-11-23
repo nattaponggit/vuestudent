@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Register</h1>
-    <form>
+    <form @submit="submit">
       <input type="text" v-model="account.username" placeholder="Username" />
       <input type="text" v-model="account.password" placeholder="Password" />
       <button type="submit">Submit</button>
@@ -17,9 +17,14 @@ export default {
     return {
       account: {
         username: "",
-        password: ""
-      }
-    }
+        password: "",
+      },
+    };
+  },
+  methods: {
+    submit() {
+      alert(JSON.stringify(this.account));
+    },
   },
 };
 </script>
