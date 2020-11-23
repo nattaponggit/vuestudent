@@ -8,8 +8,8 @@
     <button @click="login">Login</button>
     <hr />
 
-    <CMEntry />
-    <CMEntry />
+    <CMEntry label="Username" />
+    <CMEntry label="Password" />
     <button @click="submit">Submit</button>
     <button @click="clear">Clear</button>
   </div>
