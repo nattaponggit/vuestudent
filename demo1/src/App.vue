@@ -6,27 +6,21 @@
     <div>My address is {{ address }}</div>
     <button @click="register">Register</button>
     <button @click="login">Login</button>
-    <hr>
-    
-    <label>Username</label>
-    <input v-model="username"  type="text" > <br>
-    
-    <label>Password</label>
-    <input v-model="password" type="text" > <br>
+    <hr />
+
+    <CMEntry />
+    <CMEntry />
     <button @click="submit">Submit</button>
     <button @click="clear">Clear</button>
-  
-      <CMEntry/>
   </div>
 </template>
 
 <script>
-
-import CMEntry from "./CMEntry"
+import CMEntry from "./CMEntry";
 
 export default {
-  components:{
-    CMEntry
+  components: {
+    CMEntry,
   },
   //Interpolation
   data() {
@@ -35,23 +29,23 @@ export default {
       age: 42,
       address: "3761/135 ...",
       username: "",
-      password: ""
+      password: "",
     };
   },
   methods: {
-    clear(){
-      this.username = ""
-      this.password = ""
+    clear() {
+      this.username = "";
+      this.password = "";
     },
-    submit(){
-      alert(`username: ${this.username}, password: ${this.password}`)
+    submit() {
+      alert(`username: ${this.username}, password: ${this.password}`);
     },
-    register(){
-      alert("Register")
+    register() {
+      alert("Register");
     },
-    login: function(){
-      alert("Login")
-    }
+    login: function() {
+      alert("Login");
+    },
   },
 };
 </script>
