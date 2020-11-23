@@ -1,9 +1,9 @@
 <template lang="html">
   <v-container>
     <v-row align="center" justify="center" class="pt-10">
-      <v-card style="width:400px;">
-        <v-img class="white--text align-end" height="200px" src="@/assets/login_header.jpg">
-          <v-card-title>Login</v-card-title>
+      <v-card style="width:400px" :elevation="1">
+        <v-img class="white--text align-end" height="200px" src="@/assets/docks.jpg">
+          <v-card-title>Register</v-card-title>
         </v-img>
 
         <v-card-text>
@@ -23,19 +23,18 @@
               required
             />
 
-
             <!-- Buttons  -->
             <v-layout justify-space-between class="mt-5">
-              <v-btn text small @click="$router.push('/register')">Register</v-btn>
-
+              <v-btn text small class="gray" @click="$router.go(-1)">Cancel</v-btn>
               <v-btn
                 type="submit"
                 :class="{
                   'blue darken-4 white--text': valid,
                   disabled: !valid
                 }"
-                >Login</v-btn
               >
+                Confirm
+              </v-btn>
             </v-layout>
           </v-form>
         </v-card-text>
@@ -45,26 +44,22 @@
 </template>
 
 <script lang="js">
+import api from '@/services/api'
 
-import api from "@/services/api";
   export default  {
-    name: 'login',
+    name: 'register',
     props: [],
-    created() {
-    },
     mounted () {
-      if (api.isLoggedIn()){
-        this.$router.push("/stock")
-      }
+
     },
-    data () {
+   data () {
           return {
             account:{
               username:"",
               password:""
             },
             valid: false,
-            e1: true,
+            e1: false,
             password: '',
             passwordRules: [
               (v) => !!v || 'Password is required',
@@ -76,12 +71,9 @@ import api from "@/services/api";
           }
         },
         methods: {
-          async submit () {
+           async submit () {
             if (this.$refs.form.validate()) {
-               this.$store.dispatch({
-                                    type: 'doLogin',
-                                    ...this.account
-                                  })
+              await api.register(this.account)
             }
           },
           clear () {
@@ -95,8 +87,6 @@ import api from "@/services/api";
 </script>
 
 <style scoped lang="scss">
-.buttons {
-  display: flex;
-  justify-content: flex-end;
+.register {
 }
 </style>
