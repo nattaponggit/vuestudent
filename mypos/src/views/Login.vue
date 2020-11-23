@@ -15,7 +15,7 @@
 
           <v-text-field name="password" label="password" id="password" />
 
-          <v-layout row>
+          <v-layout row justify-space-between>
             <v-btn flat color="primary">Cancel</v-btn>
             <v-btn color="success">Login</v-btn>
           </v-layout>
@@ -28,6 +28,14 @@
 <script>
 export default {
   name: "login",
+  data() {
+    return {
+      account: {
+        username: "",
+        password: "",
+      },
+    };
+  },
 };
 </script>
 
