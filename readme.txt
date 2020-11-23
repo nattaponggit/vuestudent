@@ -19,3 +19,6 @@ octotree (chrome extension)
     + vetur
     + rest client 
 
+
+
+yarn global add @vue/cli
