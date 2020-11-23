@@ -23,3 +23,5 @@ octotree (chrome extension)
 
 yarn global add @vue/cli
 %LOCALAPPDATA%\Yarn
+
+https://www.youtube.com/watch?v=9plmjUImpqc&t=2s
