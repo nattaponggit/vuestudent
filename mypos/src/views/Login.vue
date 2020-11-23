@@ -10,10 +10,20 @@
       </v-img>
 
       <v-card-text>
-        <v-form>
-          <v-text-field name="username" label="username" id="username" />
+        <v-form @click.prevent="submit">
+          <v-text-field
+            v-model="account.username"
+            name="username"
+            label="username"
+            id="username"
+          />
 
-          <v-text-field name="password" label="password" id="password" />
+          <v-text-field
+            v-model="account.password"
+            name="password"
+            label="password"
+            id="password"
+          />
 
           <v-layout row justify-space-between>
             <v-btn flat color="primary">Cancel</v-btn>
@@ -35,6 +45,11 @@ export default {
         password: "",
       },
     };
+  },
+  methods: {
+    submit(){
+      
+    }
   },
 };
 </script>
