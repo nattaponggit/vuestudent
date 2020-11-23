@@ -8,8 +8,8 @@
     <button @click="login">Login</button>
     <hr />
 
-    <CMEntry label="Username" />
-    <CMEntry label="Password" />
+    <CMEntry v-model="username" label="Username" @changed="onChange" />
+    <CMEntry v-model="password" label="Password" />
     <button @click="submit">Submit</button>
     <button @click="clear">Clear</button>
   </div>
@@ -33,6 +33,9 @@ export default {
     };
   },
   methods: {
+    onChange(){
+
+    },
     clear() {
       this.username = "";
       this.password = "";

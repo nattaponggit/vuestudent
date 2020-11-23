@@ -1,14 +1,19 @@
 <template>
   <div>
   <label>{{label}}</label>
-    <input v-model="username"  type="text" >
+    <input @change:="onChange" type="text" >
   </div>
 </template>
 
 <script>
 export default {
     name:"CMEntry",
-    props:["label"]
+    props:["label"],
+    methods: {
+        onChange(target){
+            console.log(target.value)
+        }
+    },  
 
 }
 </script>
