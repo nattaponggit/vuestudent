@@ -8,15 +8,26 @@
     <button @click="login">Login</button>
     <hr>
     
-    <input v-model="username"  type="text" placeholder="Username"> <br>
-    <input v-model="password" type="text" placeholder="Password"> <br>
+    <label>Username</label>
+    <input v-model="username"  type="text" > <br>
+    
+    <label>Password</label>
+    <input v-model="password" type="text" > <br>
     <button @click="submit">Submit</button>
     <button @click="clear">Clear</button>
+  
+      <CMEntry/>
   </div>
 </template>
 
 <script>
+
+import CMEntry from "./CMEntry"
+
 export default {
+  components:{
+    CMEntry
+  },
   //Interpolation
   data() {
     return {
