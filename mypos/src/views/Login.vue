@@ -10,8 +10,7 @@
       </v-img>
 
       <v-card-text>
-        <v-form> 
-        </v-form>
+        <v-form> </v-form>
       </v-card-text>
     </v-card>
   </v-container>
