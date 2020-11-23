@@ -7,10 +7,6 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
-    redirect: "/login",
-  },
-  {
     path: "/login",
     name: "login",
     component: Login,
@@ -19,6 +15,14 @@ const routes = [
     path: "/register",
     name: "register",
     component: Register,
+  },
+  {
+    path: "/",
+    redirect: "/login",
+  },
+  {
+    path: "*",
+    redirect: "/login", // page not found
   },
 ];
 
