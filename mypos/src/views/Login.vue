@@ -16,6 +16,8 @@
             name="username"
             label="username"
             id="username"
+            :rules="emailRules" required 
+            required
           />
 
           <v-text-field
