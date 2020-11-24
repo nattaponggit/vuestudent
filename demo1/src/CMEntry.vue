@@ -13,12 +13,10 @@ export default {
       label:String
     },
     methods: {
-        onChange(e){
-            // console.log(e.target.value)
-            this.$emit("changed", e.target.value)
-        }
-    },  
-
+      onChange(e){
+        console.log(e.target.value)
+      }
+    },
 }
 </script>
 
