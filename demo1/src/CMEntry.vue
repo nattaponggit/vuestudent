@@ -1,7 +1,7 @@
 <template>
   <div>
   <label>{{label}}</label>
-    <input @input="onChange" type="text" >
+    <input v-on:input="onChange" type="text" >
   </div>
 </template>
 
@@ -14,7 +14,8 @@ export default {
     },
     methods: {
       onChange(e){
-        console.log(e.target.value)
+        // console.log(e.target.value)
+        this.$emit("changed", e.target.value)
       }
     },
 }
