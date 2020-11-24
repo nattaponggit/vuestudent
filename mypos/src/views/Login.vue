@@ -29,9 +29,10 @@
             :append-icon="e1 ? 'visibility' : 'visibility_off'"
             @click:append="e1 = !e1"
             :type="e1 ? 'password' : 'text'"
+            counter
           />
 
-          <v-layout row justify-space-between>
+          <v-layout row justify-space-between class="mt-4">
             <v-btn flat color="primary">Cancel</v-btn>
             <v-btn color="success" type="submit">Login</v-btn>
           </v-layout>
