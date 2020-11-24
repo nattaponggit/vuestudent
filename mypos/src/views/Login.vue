@@ -51,6 +51,8 @@ export default {
       },
       emailRules: [(v) => !!v || "E-mail is required"],
       passwordRules: [(v) => !!v || "Password is required"],
+      valid: false,
+      e1: true,
     };
   },
   methods: {
