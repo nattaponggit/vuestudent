@@ -75,3 +75,6 @@ http://travistidwell.com/jsencrypt/demo/
   - vuetify
     
 - nodejs
+
+
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
