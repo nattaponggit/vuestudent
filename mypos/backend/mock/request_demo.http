@@ -1,3 +1,8 @@
 
 #### Login
 GET http://localhost:3000/login?username=admin&password=1234 HTTP/1.1
+
+
+#### Register
+GET http://localhost:3000/register/admin/1234 HTTP/1.1
+
