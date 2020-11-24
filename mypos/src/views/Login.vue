@@ -46,6 +46,9 @@ export default {
         username: "",
         password: "",
       },
+      emailRules : [
+        (v) => !!v || 'E-mail is required',
+      ]
     };
   },
   methods: {
