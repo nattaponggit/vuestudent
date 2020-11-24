@@ -3,7 +3,7 @@
 
 # fronend
 # vuejs
-npm i axios chart.js material-design-icons-iconfont vue-chartjs vue-moment vue2-filters
+yarn add axios chart.js material-design-icons-iconfont vue-chartjs vue-moment vue2-filters
 
 # backend
 # nodejs
