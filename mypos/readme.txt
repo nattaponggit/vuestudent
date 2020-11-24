@@ -78,3 +78,5 @@ http://travistidwell.com/jsencrypt/demo/
 
 
 https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
+
+https://drive.google.com/file/d/1zJlW6mLQFhc6knXFMwdGN89CE-u7y-ZR/view?usp=sharing
