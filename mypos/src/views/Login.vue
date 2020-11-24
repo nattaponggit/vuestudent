@@ -28,6 +28,7 @@
             :rules="passwordRules"
             :append-icon="e1 ? 'visibility' : 'visibility_off'"
             @click:append="e1 = !e1"
+            :type="e1 ? 'password' : 'text'"
           />
 
           <v-layout row justify-space-between>
