@@ -43,6 +43,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "Register",
   data() {
@@ -60,7 +62,13 @@ export default {
   methods: {
     submit() {
       if (this.$refs.form.validate()) {
-        alert(JSON.stringify(this.account));
+        // alert(JSON.stringify(this.account));
+        axios.post("http://localhsot:8081/api/v2/register", {
+          username: "admin",
+          password: "password",
+        }).then(result=>{
+          alert(JSON.stringify(result.data))
+        })
       }
     },
   },
