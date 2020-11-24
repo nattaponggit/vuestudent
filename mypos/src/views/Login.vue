@@ -16,7 +16,7 @@
             name="username"
             label="username"
             id="username"
-            :rules="emailRules" required 
+            :rules="emailRules"
             required
           />
 
