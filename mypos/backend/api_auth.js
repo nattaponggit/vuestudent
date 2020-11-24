@@ -17,7 +17,9 @@ router.post("/login", async (req, res) => {
         username: doc.username,
       };
 
-      res.json({ result: "ok", message: "success" });
+      const token = jwt.sign(payload);
+
+      res.json({ result: "ok", token, message: "success" });
     } else {
       res.json({ result: "nok", message: "invalid password" });
     }
