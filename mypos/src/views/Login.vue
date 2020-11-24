@@ -25,6 +25,9 @@
             name="password"
             label="password"
             id="password"
+            :rules="passwordRules"
+            :append-icon="e1 ? 'visibility' : 'visibility_off'"
+            @click:append="e1 = !e1"
           />
 
           <v-layout row justify-space-between>
@@ -46,12 +49,8 @@ export default {
         username: "",
         password: "",
       },
-      emailRules : [
-        (v) => !!v || 'E-mail is required',
-      ],
-      passwordRules: [
-              (v) => !!v || 'Password is required',
-            ],
+      emailRules: [(v) => !!v || "E-mail is required"],
+      passwordRules: [(v) => !!v || "Password is required"],
     };
   },
   methods: {
