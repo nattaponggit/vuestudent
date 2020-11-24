@@ -1,7 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/product", (req, res) => {
+router.get("/product",(req,res,next)=>{
+    next();
+}, (req, res) => {
   res.json({ result: "product successfully" });
 });
 
