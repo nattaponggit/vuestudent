@@ -10,7 +10,7 @@
       </v-img>
 
       <v-card-text>
-        <v-form @click.prevent="submit" ref="form">
+        <v-form @submit.prevent="submit" ref="form">
           <v-text-field
             v-model="account.username"
             name="username"
@@ -27,7 +27,7 @@
 
           <v-layout row justify-space-between>
             <v-btn flat color="primary">Cancel</v-btn>
-            <v-btn color="success">Login</v-btn>
+            <v-btn color="success" type="submit">Login</v-btn>
           </v-layout>
         </v-form>
       </v-card-text>
@@ -47,7 +47,11 @@ export default {
     };
   },
   methods: {
-    submit() {},
+    submit() {
+      if (this.$refs.form.validate()) {
+        alert(JSON.stringify(this.account));
+      }
+    },
   },
 };
 </script>
