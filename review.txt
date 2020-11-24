@@ -27,6 +27,7 @@ Day #1
 - const routes = 
     {path: "login", name: "login", component: Login}
 ]
+- v-bind, v-on:click, :xxx, @click
  
 Day #2
 - Login and Register

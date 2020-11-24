@@ -6,11 +6,14 @@
     <div>My address is {{ address }}</div>
     <button @click="register">Register</button>
     <button @click="login">Login</button>
+    <button @click="$store.dispatch({ type: 'clear' })">Reset</button>
+    <br>
+    <span>{{$store.state.count}}</span>
     <hr />
 
-    <CMEntry v-model="username" label="Username" @changed="onChange" />
+    <CMEntry v-model="username" :label="username_label" @changed="onChange" />
     <CMEntry v-model="password" label="Password" />
-    <button @click="submit">Submit</button>
+    <button  v-on:click="submit">Submit</button>
     <button @click="clear">Clear</button>
   </div>
 </template>
@@ -23,6 +26,9 @@ export default {
     CMEntry,
   },
   //Interpolation
+  mounted() {
+    this.username_label = "Init Username"
+  },
   data() {
     return {
       myname: "lek",
@@ -30,11 +36,12 @@ export default {
       address: "3761/135 ...",
       username: "",
       password: "",
+      username_label:"Username"
     };
   },
   methods: {
-    onChange(){
-
+    onChange(value){
+      console.log("Input : " + value)
     },
     clear() {
       this.username = "";
@@ -44,7 +51,8 @@ export default {
       alert(`username: ${this.username}, password: ${this.password}`);
     },
     register() {
-      alert("Register");
+      //alert("Register");
+      this.$store.state.count++
     },
     login: function() {
       alert("Login");
