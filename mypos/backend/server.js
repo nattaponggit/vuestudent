@@ -11,6 +11,10 @@ app.get("/login", (req, res) => {
   res.json(req.query);
 });
 
+app.get("/register/:username/:password", (req, res) => {
+  res.json(req.params);
+});
+
 app.listen(3000, () => {
   console.log("server is running.");
 });
