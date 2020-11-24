@@ -10,7 +10,7 @@
       </v-img>
 
       <v-card-text>
-        <v-form @click.prevent="submit">
+        <v-form @click.prevent="submit" ref="form">
           <v-text-field
             v-model="account.username"
             name="username"
@@ -47,9 +47,7 @@ export default {
     };
   },
   methods: {
-    submit(){
-      
-    }
+    submit() {},
   },
 };
 </script>
