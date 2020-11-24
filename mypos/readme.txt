@@ -7,7 +7,7 @@ npm i axios chart.js material-design-icons-iconfont vue-chartjs vue-moment vue2-
 
 # backend
 # nodejs
-npm i bcryptjs body-parser cors express formidable fs-extra jsonwebtoken moment mongoose mongoose-sequence onesignal-node
+yarn add bcryptjs body-parser cors express formidable fs-extra jsonwebtoken moment mongoose mongoose-sequence onesignal-node
 
 yarn serve
 yarn run build
