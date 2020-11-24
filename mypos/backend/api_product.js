@@ -1,10 +1,15 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/product",(req,res,next)=>{
+// http://localhost:8081/api/v2/product
+router.get(
+  "/product",
+  (req, res, next) => {
     next();
-}, (req, res) => {
-  res.json({ result: "product successfully" });
-});
+  },
+  (req, res) => {
+    res.json({ result: "product successfully" });
+  }
+);
 
 module.exports = router;
