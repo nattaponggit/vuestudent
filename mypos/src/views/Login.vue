@@ -32,13 +32,16 @@
             counter
           />
 
-          <v-layout row justify-space-between class="mt-4">
+          <v-layout row class="mt-4">
             <v-btn type="button" icon @click="clear">
               <v-icon>mdi-cached</v-icon>
             </v-btn>
             <v-btn text color="primary" @click="$router.push('/register')"
               >Register</v-btn
             >
+
+            <div style="flex:1;"></div>
+
             <v-btn color="success" type="submit">Login</v-btn>
           </v-layout>
         </v-form>
