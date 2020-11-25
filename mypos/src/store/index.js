@@ -10,6 +10,9 @@ export default new Vuex.Store({
   mutations: {
   },
   actions: {
+    clear(){
+      this.state.count = 0
+    }
   },
   modules: {
   }

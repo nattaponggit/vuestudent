@@ -37,6 +37,16 @@
               >Register</v-btn
             >
             <v-btn color="success" type="submit">Login</v-btn>
+            <v-btn
+              color="success"
+              type="button"
+              @click="
+                $store.dispatch({
+                  type: 'clear',
+                })
+              "
+              >Clear</v-btn
+            >
           </v-layout>
         </v-form>
       </v-card-text>
