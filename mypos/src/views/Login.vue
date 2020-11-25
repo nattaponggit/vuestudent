@@ -71,10 +71,8 @@ export default {
   },
   methods: {
     submit() {
-      // this.$store.state.count++;
-      this.$store.dispatch({ type: "add" });
       if (this.$refs.form.validate()) {
-        // alert(JSON.stringify(this.account));
+        this.$store.dispatch({ type: "doLogin", ...this.account });
       }
     },
   },
