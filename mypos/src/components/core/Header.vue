@@ -3,11 +3,7 @@
     <v-btn icon @click="$router.back()" v-if="isShowBackBtn">
       <v-icon>mdi-arrow-left</v-icon>
     </v-btn>
-    <v-toolbar-title
-      >CMPOS Workshop V{{ version }} | {{ version }} |
-      {{ version }}</v-toolbar-title
-    >
-    <span>{{ ran() }} | {{ ran() }} | {{ ran() }} | </span>
+    <v-toolbar-title>CMPOS Workshop V{{ version }}</v-toolbar-title>
     <v-spacer></v-spacer>
     <span>{{ $store.getters["username"] | capitalize }}</span>
     <v-btn icon @click="onClickLogOff">
@@ -29,8 +25,7 @@ import api from "@/services/api";
     },
     computed: {
       version(){
-        // return process.env.VUE_APP_VERSION
-        return Math.random()
+        return process.env.VUE_APP_VERSION
       },
       isShowBackBtn(){
         return this.$route.matched.some(({ name }) => {
@@ -44,9 +39,6 @@ import api from "@/services/api";
       }
     },
     methods: {
-      ran(){
-        return Math.random()
-      },
       onClickLogOff(){
 
         this.$store.dispatch('doLogout')
