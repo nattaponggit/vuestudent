@@ -38,4 +38,43 @@ router.get("/product", jwt.verify, async (req, res) => {
   res.json(doc);
 });
 
+
+// ------------------------------
+router.delete("/product/id/:id", jwt.verify, async (req, res) => {
+  let doc = await Products.findOneAndDelete({ product_id: req.params.id });
+  res.json({ result: "ok", message: doc });
+});
+
+router.get("/product/id/:id", jwt.verify, async (req, res) => {
+  let doc = await Products.findOne({ product_id: req.params.id });
+  res.json(doc);
+});
+
+router.put("/product", jwt.verify, async (req, res) => {
+  const form = new formidable.IncomingForm();
+  form.parse(req, async (err, fields, files) => {
+    console.log(JSON.stringify({ err, fields, files }));
+    await Products.findOneAndUpdate({ product_id: fields.product_id }, fields);
+    await uploadImage(files, fields);
+    res.json({ result: "ok", message: fields });
+  });
+});
+
+// Get product by keyword
+router.get("/product/name/:keyword", async (req, res) => {
+  console.log("get products by keyword");
+  try {
+    var query = { name: new RegExp("^.*" + req.params.keyword + ".*$", "i") };
+    let result = await Products.find(query);
+    if (result) {
+      res.json(result);
+    } else {
+      res.json([]);
+    }
+  } catch (error) {
+    alert(JSON.stringify(error));
+  }
+});
+
+
 module.exports = router;
