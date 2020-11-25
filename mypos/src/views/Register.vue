@@ -43,8 +43,7 @@
 </template>
 
 <script>
-import axios from "axios";
-
+import api from "@/services/api";
 export default {
   name: "Register",
   data() {
@@ -62,15 +61,7 @@ export default {
   methods: {
     submit() {
       if (this.$refs.form.validate()) {
-        // alert(JSON.stringify(this.account));
-        axios
-          .post("http://localhost:8081/api/v2/register", {
-            username: "admin",
-            password: "password",
-          })
-          .then((result) => {
-            alert(JSON.stringify(result.data));
-          });
+       
       }
     },
   },
