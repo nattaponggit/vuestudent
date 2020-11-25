@@ -10,20 +10,24 @@ const routes = [
   {
     path: "/login",
     name: "login",
+    meta: { isSecured: false },
     component: Login,
   },
   {
     path: "/register",
     name: "register",
+    meta: { isSecured: false },
     component: Register,
   },
   {
     path: "/stock",
     name: "stock",
+    meta: { isSecured: true },
     component: Stock,
   },
   {
     path: "/",
+    meta: { isSecured: false },
     redirect: "/login",
   },
   {
