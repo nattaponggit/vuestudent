@@ -12,7 +12,6 @@ new Vue({
   router,
   vuetify,
   store,
+  mixins: [Vue2Filters.mixin],
   render: (h) => h(App),
 }).$mount("#app");
-
-Vue.use(Vue2Filters);
