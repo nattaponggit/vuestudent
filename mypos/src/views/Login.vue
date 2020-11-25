@@ -33,20 +33,13 @@
           />
 
           <v-layout row justify-space-between class="mt-4">
+            <v-btn type="button" icon @click="clear">
+              <v-icon>mdi-cached</v-icon>
+            </v-btn>
             <v-btn text color="primary" @click="$router.push('/register')"
               >Register</v-btn
             >
             <v-btn color="success" type="submit">Login</v-btn>
-            <v-btn
-              color="success"
-              type="button"
-              @click="
-                $store.dispatch({
-                  type: 'clear',
-                })
-              "
-              >Clear</v-btn
-            >
           </v-layout>
         </v-form>
       </v-card-text>
@@ -74,6 +67,9 @@ export default {
       if (this.$refs.form.validate()) {
         this.$store.dispatch({ type: "doLogin", ...this.account });
       }
+    },
+    clear() {
+      this.$refs.form.reset();
     },
   },
 };
