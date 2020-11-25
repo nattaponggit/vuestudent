@@ -1,9 +1,12 @@
 <template>
-  <v-app>
-    <Header />
-    <Menu />
-    <Content />
-  </v-app>
+  <div>
+    <span class="bg_image"></span>
+    <v-app>
+      <Header />
+      <Menu />
+      <Content />
+    </v-app>
+  </div>
 </template>
 
 <script>
@@ -21,4 +24,15 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.bg_image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("assets/background.jpg") no-repeat center center;
+  background-size: cover;
+  transform: scale(1.1);
+}
+</style>
