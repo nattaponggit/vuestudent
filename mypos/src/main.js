@@ -7,11 +7,11 @@ import store from "./store";
 import Vue2Filters from "vue2-filters";
 
 Vue.config.productionTip = false;
+Vue.use(Vue2Filters);
 
 new Vue({
   router,
   vuetify,
   store,
-  mixins: [Vue2Filters.mixin],
   render: (h) => h(App),
 }).$mount("#app");
