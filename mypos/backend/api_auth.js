@@ -17,7 +17,7 @@ router.post("/login", async (req, res) => {
         username: doc.username,
       };
 
-      const token = jwt.sign(payload);
+      const token = jwt.sign(payload, "100h");
 
       res.json({ result: "ok", token, message: "success" });
     } else {
