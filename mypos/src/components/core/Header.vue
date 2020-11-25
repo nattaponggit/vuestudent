@@ -1,5 +1,5 @@
 <template>
-  <div>Header</div>
+  <div>Header {{ $store.state.count }}</div>
 </template>
 
 <script>

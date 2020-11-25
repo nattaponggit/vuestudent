@@ -1,13 +1,11 @@
 <template>
-  <div>Menu</div>
+  <div>Menu {{ $store.state.count }}</div>
 </template>
 
 <script>
 export default {
-    name: "Menu"
-}
+  name: "Menu",
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

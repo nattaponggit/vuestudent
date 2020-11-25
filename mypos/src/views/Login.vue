@@ -61,8 +61,9 @@ export default {
   },
   methods: {
     submit() {
+      this.$store.state.count++;
       if (this.$refs.form.validate()) {
-        alert(JSON.stringify(this.account));
+        // alert(JSON.stringify(this.account));
       }
     },
   },
