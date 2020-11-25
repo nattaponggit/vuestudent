@@ -38,4 +38,19 @@ const router = new VueRouter({
   routes,
 });
 
+// Router guard
+router.beforeEach((to, from, next) => {
+  if (to.matched.some((record) => (record.meta.isSecured ? true : false))) {
+    // secure route
+    if (api.isLoggedIn()) {
+      next();
+    } else {
+      next("/login");
+    }
+  } else {
+    // unsecure route
+    next();
+  }
+});
+
 export default router;
