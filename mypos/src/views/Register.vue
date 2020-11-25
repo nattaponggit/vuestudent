@@ -59,9 +59,9 @@ export default {
     };
   },
   methods: {
-    submit() {
+    async submit() {
       if (this.$refs.form.validate()) {
-       
+        await api.register(this.account);
       }
     },
   },
