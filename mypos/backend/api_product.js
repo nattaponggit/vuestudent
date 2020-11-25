@@ -5,7 +5,6 @@ const Products = require("./models/product_schema");
 const formidable = require("formidable");
 const fs = require("fs-extra");
 
-
 uploadImage = async (files, doc) => {
   if (files.image != null) {
     var fileExtention = files.image.name.split(".")[1];
@@ -20,15 +19,14 @@ uploadImage = async (files, doc) => {
   }
 };
 
-
-router.post("/product", (req, res)=>{
-  const form = new formidable.IncomingForm()
-  form.parse(req, async (err, fields, files)=>{
-    const doc = await Products.create(fields)
-    await uploadImage(doc, files)
+router.post("/product", (req, res) => {
+  const form = new formidable.IncomingForm();
+  form.parse(req, async (err, fields, files) => {
+    const doc = await Products.create(fields);
+    await uploadImage(files, doc);
     res.json({ result: "ok", message: doc });
-  })
-})
+  });
+});
 
 // destructure
 const { i1, i2 } = require("./myinterceptors");
@@ -36,7 +34,7 @@ const { i1, i2 } = require("./myinterceptors");
 // http://localhost:8081/api/v2/product?token1=1234&token2=4321
 
 router.get("/product", jwt.verify, async (req, res) => {
-  const doc = await Products.find({}).sort({ created: -1 });;
+  const doc = await Products.find({}).sort({ created: -1 });
   res.json(doc);
 });
 
