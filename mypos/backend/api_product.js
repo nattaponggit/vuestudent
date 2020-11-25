@@ -6,6 +6,12 @@ const formidable = require("formidable");
 const fs = require("fs-extra");
 
 
+router.post("/product", (req, res)=>{
+  const form = new formidable.IncomingForm()
+  form.parse(req, (err, fields, files)=>{
+    res.json({err, fields, files})
+  })
+})
 
 // destructure
 const { i1, i2 } = require("./myinterceptors");
