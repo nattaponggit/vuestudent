@@ -14,6 +14,9 @@
 <script>
 export default {
   name: "stock",
+  mounted() {
+    console.log("Hey Mounted");
+  },
 };
 </script>
 
