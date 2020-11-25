@@ -23,8 +23,10 @@ uploadImage = async (files, doc) => {
 
 router.post("/product", (req, res)=>{
   const form = new formidable.IncomingForm()
-  form.parse(req, (err, fields, files)=>{
-    res.json({err, fields, files})
+  form.parse(req, async (err, fields, files)=>{
+    const doc = await Products.create(fields)
+    await uploadImage(doc, files)
+    res.json({ result: "ok", message: doc });
   })
 })
 
