@@ -33,7 +33,9 @@
           />
 
           <v-layout row justify-space-between class="mt-4">
-            <v-btn flat color="primary">Cancel</v-btn>
+            <v-btn text color="primary" @click="$router.push('/login')"
+              >Cancel</v-btn
+            >
             <v-btn color="success" type="submit">Register</v-btn>
           </v-layout>
         </v-form>
