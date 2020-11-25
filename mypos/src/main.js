@@ -15,3 +15,8 @@ new Vue({
   store,
   render: (h) => h(App),
 }).$mount("#app");
+
+Vue.use(require("vue-moment")); // require to call lib like this
+Vue.filter("imageUrl", function(image) {
+  return `${imageUrl}/${image}?timestamp=${Date.now()}`;
+});
