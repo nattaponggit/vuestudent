@@ -1,6 +1,6 @@
 <template>
   <v-content>
-    <v-fade-transition mode="out-in">
+    <v-fade-transition mode="out-in" duration="150">
       <router-view />
     </v-fade-transition>
   </v-content>
