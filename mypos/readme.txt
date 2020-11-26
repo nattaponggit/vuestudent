@@ -84,3 +84,19 @@ mongorestore -d mypos /Users/chaiyasit/Desktop/vuestudent/mypos/backend/dummy_db
 
 npx serve -p 80 ./dist
 sudo nginx
+
+
+  # location / {
+        #    root   html;
+        #    index  index.html index.htm;
+        # }   
+
+        #no sub-folder        
+        location / {
+            try_files $uri $uri/ /index.html;
+        }   
+        
+        # have sub-folder named "demo"        
+        location /demo {
+          try_files $uri $uri/ /demo/index.html; 
+        }  
