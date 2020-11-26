@@ -81,3 +81,5 @@ https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
 
 https://drive.google.com/file/d/1zJlW6mLQFhc6knXFMwdGN89CE-u7y-ZR/view?usp=sharing
 mongorestore -d mypos /Users/chaiyasit/Desktop/vuestudent/mypos/backend/dummy_db_cmpos 
+
+npx serve -p 80 ./dist
