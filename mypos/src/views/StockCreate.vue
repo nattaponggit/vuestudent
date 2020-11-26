@@ -26,6 +26,9 @@
 
         <input type="file" @change="onFileSelected" />
         <br />
+
+        <span v-if="even">Hey</span>
+
         <img
           v-if="imageURL"
           :src="imageURL"
@@ -62,7 +65,13 @@ export default {
       image: null,
     },
     imageURL: null,
+    even: false,
   }),
+  mounted() {
+    setInterval(() => {
+      this.even = !this.even;
+    }, 500);
+  },
 
   methods: {
     onFileSelected(event) {
