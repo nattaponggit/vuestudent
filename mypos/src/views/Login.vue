@@ -51,8 +51,14 @@
 </template>
 
 <script>
+import api from "@/services/api";
 export default {
   name: "login",
+  mounted() {
+    if (api.isLoggedIn()) {
+      this.$router.push("/stock");
+    }
+  },
   data() {
     return {
       account: {
