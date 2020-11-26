@@ -16,7 +16,8 @@ router.get("/transaction", async (req, res) => {
     },
     { $unwind: "$staff" },
     { $addFields: { staff_id: "$staff.username" } },
-  ]);
+    { $project: { staff: 0 } },
+  ]).sort({ timestamp: -1 });
 
   res.json(doc);
 });
