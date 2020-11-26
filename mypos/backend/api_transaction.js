@@ -4,7 +4,14 @@ const Trans = require("./models/trans_schema");
 const jwt = require("./jwt");
 
 router.get("/transaction", (req, res) => {
-  res.json({ result: "transaction successfully" });
+  Trans.aggregate([
+    {$lookup: {
+      from: "users",
+      localField: "staff_id",
+      foreignField: "_id",
+      as: "staff"
+    }},    
+  ])
 });
 
 router.post("/transaction", jwt.verify, async (req, res) => {
