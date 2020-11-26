@@ -3,15 +3,20 @@ const router = express.Router();
 const Trans = require("./models/trans_schema");
 const jwt = require("./jwt");
 
-router.get("/transaction", (req, res) => {
-  Trans.aggregate([
-    {$lookup: {
-      from: "users",
-      localField: "staff_id",
-      foreignField: "_id",
-      as: "staff"
-    }},    
-  ])
+// http://localhost:8081/api/v2/transaction
+router.get("/transaction", async (req, res) => {
+  const doc = await Trans.aggregate([
+    {
+      $lookup: {
+        from: "users",
+        localField: "staff_id",
+        foreignField: "_id",
+        as: "staff",
+      },
+    },
+  ]);
+
+  res.json(doc);
 });
 
 router.post("/transaction", jwt.verify, async (req, res) => {
