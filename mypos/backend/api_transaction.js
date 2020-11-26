@@ -14,6 +14,8 @@ router.get("/transaction", async (req, res) => {
         as: "staff",
       },
     },
+    { $unwind: "$staff" },
+    { $addFields: { staff_id: "$staff.username" } },
   ]);
 
   res.json(doc);
