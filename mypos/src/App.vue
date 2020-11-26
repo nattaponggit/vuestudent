@@ -2,8 +2,8 @@
   <div>
     <span class="bg_image"></span>
     <v-app>
-      <Header />
-      <Menu />
+      <Header v-if="$store.getters['isLogin']" />
+      <Menu v-if="$store.getters['isLogin']" />
       <Content />
     </v-app>
   </div>
@@ -20,6 +20,9 @@ export default {
     Header,
     Menu,
     Content,
+  },
+  mounted() {
+    this.$store.dispatch({ type: "restoreLogin" });
   },
 };
 </script>
