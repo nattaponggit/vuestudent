@@ -1,15 +1,23 @@
 <template>
-  <div>
-    <BarChart :chartdata="data" :options="options" style="height: 500px;" />
-  </div>
+  <v-row>
+    <v-col cols="6">
+      <BarChart :chartdata="data" :options="options" style="height: 500px;" />
+    </v-col>
+    <v-col cols="6">
+      <LineChart :chartdata="data" :options="options" style="height: 500px;" />
+    </v-col>
+  </v-row>
 </template>
 
 <script>
 import BarChart from "@/components/charts/BarChart";
+import LineChart from "@/components/charts/LineChart";
+
 export default {
   name: "report",
   components: {
     BarChart,
+    LineChart,
   },
   data() {
     return {
