@@ -33,7 +33,7 @@ import BarChart from "@/components/charts/BarChart.vue";
           labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
           datasets: [
             {
-              label: '2019',
+              label: '2020',
               pointBackgroundColor: 'white',
               borderWidth: 1,
               pointBorderColor: '#249EBF',
@@ -44,21 +44,24 @@ import BarChart from "@/components/charts/BarChart.vue";
                ],
                borderWidth: 2,
                fill: true,
-               backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-                 'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            }
+               backgroundColor: "#FF08",
+            },
+            {
+              label: '2019',
+              pointBackgroundColor: 'white',
+              borderWidth: 1,
+              pointBorderColor: '#249EBF',
+              data: this.getRandomInt(),
+
+              borderColor: [
+                '#0002'
+               ],
+               borderWidth: 2,
+               fill: true,
+               backgroundColor: "#0003"
+            ,
+            },
+
           ]};
 
       },
