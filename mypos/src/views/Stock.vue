@@ -11,7 +11,11 @@
           avatar_ic="mdi-cart-outline"
           avatar_bg="#00a65a"
           subtitle="1,800"
-        />
+        >
+          <template v-slot:avatar>
+            <v-icon color="white">mdi-cart-outline</v-icon>
+          </template>
+        </StockCard>
       </v-col>
 
       <v-col lg="3" md="6" sm="12" cols="12">

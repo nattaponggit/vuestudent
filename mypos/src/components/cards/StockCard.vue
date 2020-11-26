@@ -7,7 +7,7 @@
       </v-list-item-content>
 
       <v-list-item-avatar size="80" :color="avatar_bg">
-        <slot name="avatar"> </slot>
+        <v-slot></v-slot>
       </v-list-item-avatar>
     </v-list-item>
   </v-card>
