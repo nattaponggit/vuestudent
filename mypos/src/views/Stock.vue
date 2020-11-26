@@ -6,12 +6,7 @@
     <!-- Summary section -->
     <v-row>
       <v-col lg="3" md="6" sm="12" cols="12">
-        <StockCard
-          title="TOTAL"
-          avatar_ic="mdi-cart-outline"
-          avatar_bg="#00a65a"
-          subtitle="1,800"
-        >
+        <StockCard title="TOTAL" avatar_bg="#00a65a" subtitle="1,800">
           <template v-slot:avatar>
             <v-icon color="white">mdi-cart-outline</v-icon>
           </template>
@@ -24,7 +19,13 @@
           avatar_ic="mdi-flask-empty-outline"
           avatar_bg="#f39c12"
           subtitle="12"
-        />
+        >
+          <template v-slot:avatar>
+            <v-img
+              src="https://image.shutterstock.com/image-vector/cute-fun-dog-cartoon-260nw-350881304.jpg"
+            />
+          </template>
+        </StockCard>
       </v-col>
 
       <v-col lg="3" md="6" sm="12" cols="12">
