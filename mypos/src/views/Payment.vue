@@ -1,5 +1,5 @@
 <template>
-  <div><h1>Payment</h1></div>
+  <div><v-btn block color="success" dark>Payment</v-btn></div>
 </template>
 
 <script>
