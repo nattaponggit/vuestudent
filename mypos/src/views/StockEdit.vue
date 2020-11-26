@@ -81,7 +81,7 @@ export default {
     async submit() {
       let formData = new FormData();
       const { name, price, stock, product_id } = this.product;
-      formData.append("id", product_id);
+      formData.append("product_id", product_id);
       formData.append("name", name);
       formData.append("stock", stock);
       formData.append("price", price);
