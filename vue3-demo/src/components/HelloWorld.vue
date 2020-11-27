@@ -4,7 +4,7 @@
   <h4>{{version}}</h4>
   <h4>{{isYes}}</h4>
   <h4>{{account}}</h4>
-  <h4>{{nameR}}</h4>
+  <h4>{{user}}</h4>
 </template>
 
 <script>
@@ -19,15 +19,15 @@ export default {
     const version = ref(3)
     const isYes = ref(true)
     const account = ref({username: "admin",password: "1234"})
-    var nameR = reactive("codemobiles")
+    let user = reactive({username: "admin",password: "1234"})
 
     setInterval(()=>{
       isYes.value = !isYes.value
-      account.value = {username: "", password: ""}
-      nameR = "ttttt"
-    },3000)
+      account.value.username = !isYes.value
+      user.username = !isYes.value
+    },300)
 
-    return {name, version, isYes, account, nameR}
+    return {name, version, isYes, account, user}
   },
 
 }
