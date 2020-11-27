@@ -5,6 +5,7 @@
   <h4>{{isYes}}</h4>
   <h4>{{account}}</h4>
   <h4>{{user}}</h4>
+  <button @click="addVersion">{{version}}</button>
 </template>
 
 <script>
@@ -27,7 +28,12 @@ export default {
       user.username = !isYes.value
     },300)
 
-    return {name, version, isYes, account, user}
+
+    function addVersion(){
+      version.value++
+    }
+
+    return {name, version, isYes, account, user, addVersion}
   },
 
 }
