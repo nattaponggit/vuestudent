@@ -12,6 +12,11 @@ func Test() {
 	fmt.Println("test")
 }
 
+type account struct {
+	Username string
+	Password string
+}
+
 // Setup - used to intialize api
 func Setup(r *gin.Engine) {
 	r.GET("/ping", func(c *gin.Context) {
@@ -25,5 +30,9 @@ func Setup(r *gin.Engine) {
 }
 
 func register(c *gin.Context) {
-	c.String(http.StatusOK, "Register")
+
+	var input account
+	c.ShouldBind(&input)
+	c.JSON(http.StatusOK, gin.H{"result": "ok", "data": input})
+
 }
