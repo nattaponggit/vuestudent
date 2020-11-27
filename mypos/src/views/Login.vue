@@ -52,8 +52,10 @@
 
 <script>
 import api from "@/services/api";
+import myMixin from "@/views/myMixin";
 export default {
   name: "login",
+  mixins: [myMixin],
   mounted() {
     if (api.isLoggedIn()) {
       this.$router.push("/stock");
@@ -78,6 +80,7 @@ export default {
       }
     },
     clear() {
+      this.test();
       this.$refs.form.reset();
     },
   },

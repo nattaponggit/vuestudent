@@ -27,9 +27,11 @@
 </template>
 
 <script>
-import axios from "axios";
+import serverMixins from "@/mixins/server"
+
 export default {
   name: "App",
+  mixins:[serverMixins],
   data() {
     return {
       user: {
@@ -40,15 +42,7 @@ export default {
   },
   methods: {
     async submit() {
-      const result = await axios.post(
-        "http://localhost:8081/register",
-        this.user
-      );
-      if (result.data.status == "ok") {
-        alert(result.data.message);
-      } else {
-        alert("Register failed : " + result.data.message);
-      }
+      this.doSubmit(this.user)
     },
   },
 };
