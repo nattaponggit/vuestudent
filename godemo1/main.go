@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
-import "github.com/gin-gonic/gin"
+import (
+	"fmt"
+	"main/api"
+
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
 	fmt.Println("Hello go")
@@ -21,14 +25,10 @@ func main() {
 	fn1(msg)
 	fmt.Println(fn2("Lek"))
 
-
+	api.Test()
 	r := gin.Default()
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
-	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+	api.Setup(r)
+
 }
 
 func fn1(msg string) {
